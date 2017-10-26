@@ -14,7 +14,7 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]
+    var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]     // emojis are technically text, need dbl quotes!
     
     /*
      Runs this code when this ViewController is
@@ -42,8 +42,8 @@ class EmojiTableViewController: UITableViewController {
         // Note: this will cause a Sigbrt error if no name is assigned
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = "Hello World"
-        
+        cell.textLabel?.text = emojis[indexPath.row]    //the label for the cell will be the emoji
+                                                        //it will appear in the very left of the cell
         return cell
     }
 }
