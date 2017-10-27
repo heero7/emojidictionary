@@ -5,6 +5,8 @@
     This class Extends the UITableViewController class
     Used to controll the screen which stores all of the
     emojis
+ 
+    Embedded In Navigation controller for navigation
  */
 //  Created by Kevin Mudiandambo on 10/24/17.
 //  Copyright © 2017 Kevin Mudiandambo. All rights reserved.
@@ -45,5 +47,14 @@ class EmojiTableViewController: UITableViewController {
         cell.textLabel?.text = emojis[indexPath.row]    //the label for the cell will be the emoji
                                                         //it will appear in the very left of the cell
         return cell
+    }
+    
+    /*
+     This function handles touches on each cell. When pressed, the app navigates
+     to the screen that shows the emoji along with the text for it
+     */
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //print("Tapped!")
+        performSegue(withIdentifier: "ourSegue", sender: nil)
     }
 }
