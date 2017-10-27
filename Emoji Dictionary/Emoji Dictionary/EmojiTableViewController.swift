@@ -57,4 +57,14 @@ class EmojiTableViewController: UITableViewController {
         //print("Tapped!")
         performSegue(withIdentifier: "ourSegue", sender: nil)
     }
+    
+    /*
+     Prepares the next segue with necessary data. In this case it will be the
+     EmojiDetailViewController, we want to pass data to it.
+     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // get access to next ViewController
+        let emojiDetailViewController = segue.destination as! EmojiDetailViewController
+        emojiDetailViewController.emoji = "We did it!"  // set the emoji
+    }
 }
