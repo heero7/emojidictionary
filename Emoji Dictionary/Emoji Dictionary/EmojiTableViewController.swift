@@ -51,11 +51,13 @@ class EmojiTableViewController: UITableViewController {
     
     /*
      This function handles touches on each cell. When pressed, the app navigates
-     to the screen that shows the emoji along with the text for it
+     to the screen that shows the emoji along with the text for it. When clicked,
+     it will pass the emoji that is selected in the array
      */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print("Tapped!")
-        performSegue(withIdentifier: "ourSegue", sender: nil)
+        let emoji = emojis[indexPath.row] //take the selected emoji and put it into the constant and place as sender
+        performSegue(withIdentifier: "ourSegue", sender: emoji)
     }
     
     /*
@@ -65,6 +67,6 @@ class EmojiTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // get access to next ViewController
         let emojiDetailViewController = segue.destination as! EmojiDetailViewController
-        emojiDetailViewController.emoji = "We did it!"  // set the emoji
+        emojiDetailViewController.emoji = sender as! String  // set the emoji
     }
 }

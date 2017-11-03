@@ -10,10 +10,11 @@ import UIKit
 
 class EmojiDetailViewController: UIViewController {
 
+    @IBOutlet weak var emojiLabel: UILabel!
     var emoji = ""      // holds the emoji that has been selected
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("emoji")
+        emojiLabel.text = emoji
     }
 }
