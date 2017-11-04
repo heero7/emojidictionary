@@ -80,8 +80,15 @@ class EmojiTableViewController: UITableViewController {
     func createEmojis() -> [Emoji] {
         let smiley = Emoji()//"😀","😊"
         smiley.emoji = "😀"
+        smiley.description = "A normal smiley face"
+        smiley.category = "facial expression"
         
         let bashful = Emoji()
+        bashful.emoji = "😊"
+        bashful.description = "A basful felah"
+        bashful.category = "facial expression"
+        
+        let thumbsUp = Emoji(emoji: "👍🏿", description: "Thumbs up dude!", category: 2, dob: <#T##String#>)
         return [smiley]
     }
 }
