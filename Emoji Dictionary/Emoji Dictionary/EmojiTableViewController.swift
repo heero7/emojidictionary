@@ -16,9 +16,9 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]     // emojis are technically text, need dbl quotes!
+    //var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]     // emojis are technically text, need dbl quotes!
     
-    var emoji : [Emoji] = []                    // create a blank array of Emoji class
+    var emojis : [Emoji] = []                    // create a blank array of Emoji class
     
     
     /*
@@ -27,6 +27,7 @@ class EmojiTableViewController: UITableViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojis = setupDefaultEmojis()     //load the emojis
     }
 
     // determines maximum number of rows for tableview
@@ -47,7 +48,7 @@ class EmojiTableViewController: UITableViewController {
         // Note: this will cause a Sigbrt error if no name is assigned
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = emojis[indexPath.row]    //the label for the cell will be the emoji
+        cell.textLabel?.text = emojis[indexPath.row].emoji    //the label for the cell will be the emoji
                                                         //it will appear in the very left of the cell
         return cell
     }
@@ -76,8 +77,9 @@ class EmojiTableViewController: UITableViewController {
     /*
      This returns an array of Emoji objects. Refer to the Emoji class to know the contents
      of the Emoji class.
+     This will setup the emojis for when the app is first loaded. 
      */
-    func createEmojis() -> [Emoji] {
+    func setupDefaultEmojis() -> [Emoji] {
         let smiley = Emoji()//"😀","😊"
         smiley.emoji = "😀"
         smiley.description = "A normal smiley face"
@@ -88,7 +90,7 @@ class EmojiTableViewController: UITableViewController {
         bashful.description = "A basful felah"
         bashful.category = "facial expression"
         
-        let thumbsUp = Emoji(emoji: "👍🏿", description: "Thumbs up dude!", category: 2, dob: <#T##String#>)
-        return [smiley]
+        let thumbsUp = Emoji(emoji: "👍🏿", description: "Thumbs up dude!", category: 2, dob: "4/14/1998")
+        return [smiley, bashful, thumbsUp!]
     }
 }
