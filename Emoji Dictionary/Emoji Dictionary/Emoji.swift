@@ -15,22 +15,25 @@ class Emoji {
     var emoji: String
     var description: String
     
+    var category: String
+    var birthYear: String
+    
     //MARK: Initialization
     
-    init?(emoji: String, description: String) {
-        if emoji.isEmpty || description.isEmpty {
+    init?(emoji: String, description: String, category: String, dob: String) {
+        if emoji.isEmpty || description.isEmpty || category.isEmpty || dob.isEmpty{
             return nil
         }
         self.emoji = emoji
         self.description = description
+        self.category = category
+        self.birthYear = dob
     }
     
-    init(emoji: String) {
-        if emoji.isEmpty {
-            self.emoji = "😅"
-        } else {
-            self.emoji = emoji
-        }
+    init() {
+        self.emoji = ""
         self.description = ""
+        self.category = ""
+        self.birthYear = ""
     }
 }

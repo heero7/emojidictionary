@@ -18,6 +18,9 @@ class EmojiTableViewController: UITableViewController {
     
     var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]     // emojis are technically text, need dbl quotes!
     
+    var emoji : [Emoji] = []                    // create a blank array of Emoji class
+    
+    
     /*
      Runs this code when this ViewController is
      loaded.
@@ -68,5 +71,17 @@ class EmojiTableViewController: UITableViewController {
         // get access to next ViewController
         let emojiDetailViewController = segue.destination as! EmojiDetailViewController
         emojiDetailViewController.emoji = sender as! String  // set the emoji
+    }
+    
+    /*
+     This returns an array of Emoji objects. Refer to the Emoji class to know the contents
+     of the Emoji class.
+     */
+    func createEmojis() -> [Emoji] {
+        let smiley = Emoji()//"😀","😊"
+        smiley.emoji = "😀"
+        
+        let bashful = Emoji()
+        return [smiley]
     }
 }

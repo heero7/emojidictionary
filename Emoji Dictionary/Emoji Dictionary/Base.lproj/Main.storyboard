@@ -59,6 +59,18 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A nerdy emoji" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGN-1Y-rIJ">
                                 <rect key="frame" x="10" y="636" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year: 3023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfI-6Z-Gdy">
+                                <rect key="frame" x="125" y="602" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Facial Expression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-US-e73">
+                                <rect key="frame" x="82" y="573" width="211" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,14 +79,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Mje-qs-GDd" firstAttribute="centerX" secondItem="euV-1b-Rwk" secondAttribute="centerX" id="BNr-uj-KFG"/>
+                            <constraint firstItem="dfI-6Z-Gdy" firstAttribute="top" secondItem="4gb-US-e73" secondAttribute="bottom" constant="8" id="BwZ-ul-tte"/>
                             <constraint firstItem="4t9-BT-iHU" firstAttribute="trailing" secondItem="LGN-1Y-rIJ" secondAttribute="trailing" constant="10" id="QD3-yh-jJO"/>
+                            <constraint firstItem="LGN-1Y-rIJ" firstAttribute="top" secondItem="dfI-6Z-Gdy" secondAttribute="bottom" constant="13" id="VQ5-Ox-71Q"/>
+                            <constraint firstItem="dfI-6Z-Gdy" firstAttribute="centerX" secondItem="euV-1b-Rwk" secondAttribute="centerX" id="eAb-ln-ufN"/>
                             <constraint firstItem="4t9-BT-iHU" firstAttribute="bottom" secondItem="LGN-1Y-rIJ" secondAttribute="bottom" constant="10" id="jok-g6-iud"/>
+                            <constraint firstItem="4gb-US-e73" firstAttribute="centerX" secondItem="euV-1b-Rwk" secondAttribute="centerX" id="lX9-gO-Bp7"/>
                             <constraint firstItem="Mje-qs-GDd" firstAttribute="top" secondItem="4t9-BT-iHU" secondAttribute="top" constant="20" id="vZY-Rc-MgG"/>
                             <constraint firstItem="LGN-1Y-rIJ" firstAttribute="leading" secondItem="4t9-BT-iHU" secondAttribute="leading" constant="10" id="zsh-mv-jtc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4t9-BT-iHU"/>
                     </view>
                     <connections>
+                        <outlet property="birthLabel" destination="dfI-6Z-Gdy" id="f8t-14-fAw"/>
+                        <outlet property="categoryLabel" destination="4gb-US-e73" id="yni-02-hoL"/>
                         <outlet property="emojiDefinition" destination="LGN-1Y-rIJ" id="BmM-Y8-yMB"/>
                         <outlet property="emojiLabel" destination="Mje-qs-GDd" id="Ok6-km-HV9"/>
                     </connections>
