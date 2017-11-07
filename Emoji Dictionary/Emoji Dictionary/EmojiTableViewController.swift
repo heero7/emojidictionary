@@ -70,8 +70,14 @@ class EmojiTableViewController: UITableViewController {
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // get access to next ViewController
-        let emojiDetailViewController = segue.destination as! EmojiDetailViewController
-        emojiDetailViewController.emoji = sender as! Emoji  // set the emoji
+        
+        // if the identifier is ourSegue continue to the detailView
+        if (segue.identifier == "ourSegue") {
+            let emojiDetailViewController = segue.destination as! EmojiDetailViewController
+            emojiDetailViewController.emoji = sender as! Emoji  // set the emoji
+        } else if (segue.identifier == "toEditViewController") {
+            //if identifier is editView show it but pass different items
+        }
     }
     
     /*
