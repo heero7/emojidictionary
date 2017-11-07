@@ -71,7 +71,7 @@ class EmojiTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // get access to next ViewController
         let emojiDetailViewController = segue.destination as! EmojiDetailViewController
-        emojiDetailViewController.emoji = sender as! String  // set the emoji
+        emojiDetailViewController.emoji = sender as! Emoji  // set the emoji
     }
     
     /*
