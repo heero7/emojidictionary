@@ -99,4 +99,18 @@ class EmojiTableViewController: UITableViewController {
         let thumbsUp = Emoji(emoji: "👍🏿", description: "Thumbs up dude!", category: 2, dob: "4/14/1998")
         return [smiley, bashful, thumbsUp!]
     }
+    
+    //MARK: Actions
+    
+    @IBAction func unwindToEmojiDetailView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as?
+            EditEmojiViewController, let newEmoji = sourceViewController.newEmoji {
+            
+            //add an emoji
+            let newIndexPath = IndexPath(row: emojis.count, section:0)
+            
+            emojis.append(newEmoji)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 }

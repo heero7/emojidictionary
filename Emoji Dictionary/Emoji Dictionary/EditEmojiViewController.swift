@@ -64,14 +64,5 @@ class EditEmojiViewController: UIViewController {
         newEmoji = Emoji(emoji: emoji, description: descr, category: 0, dob: year)
     }
     
-    //MARK: Actions
-    
-    @IBAction func unwindToEmojiDetailView(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as?
-            EditEmojiViewController, let newEmoji = sourceViewController.newEmoji {
-            
-            //add an emoji
-            //let newIndexPath = IndexPath(row: emoji)
-        }
-    }
+   
 }

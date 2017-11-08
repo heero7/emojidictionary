@@ -181,7 +181,11 @@
                                 <action selector="cancel:" destination="eL4-9K-OvW" id="G6E-Yt-KZ5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dBz-Zn-mkB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dBz-Zn-mkB">
+                            <connections>
+                                <segue destination="Q1c-Lu-hDA" kind="unwind" unwindAction="unwindToEmojiDetailViewWithSender:" id="Xkp-gM-5Fg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryTextfield" destination="J8v-nw-9HV" id="VG0-Yr-Jpw"/>
@@ -192,6 +196,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGw-AU-bze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Q1c-Lu-hDA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1916" y="957.57121439280365"/>
         </scene>
