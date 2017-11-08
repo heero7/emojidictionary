@@ -7,8 +7,22 @@
 //
 
 import UIKit
+import os.log
 
 class EditEmojiViewController: UIViewController {
+    
+    //MARK: Textfields
+    @IBOutlet weak var emojiTextfield: UITextField!
+    @IBOutlet weak var descriptionTextfield: UITextField!
+    @IBOutlet weak var categoryTextfield: UITextField!
+    @IBOutlet weak var yearTextfield: UITextField!
+    
+    //MARK: Navigation Buttons
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +36,18 @@ class EditEmojiViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        // checking if save button works
+        //guard let button = sender as?
     }
-    */
+    
 
 }

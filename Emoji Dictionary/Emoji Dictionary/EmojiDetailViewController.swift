@@ -16,6 +16,10 @@ class EmojiDetailViewController: UIViewController {
     @IBOutlet weak var birthLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     
+    //MARK: Navigation
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelForSelectedEmoji()

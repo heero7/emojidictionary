@@ -37,7 +37,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Kjw-5d-6Hw"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LOZ-p2-syU">
                             <connections>
-                                <segue destination="eL4-9K-OvW" kind="show" identifier="toEditViewController" id="QRI-if-9CB"/>
+                                <segue destination="udM-F1-FJ9" kind="show" identifier="toEditViewController" id="QRI-if-9CB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,20 +107,93 @@
             </objects>
             <point key="canvasLocation" x="1348" y="187.55622188905548"/>
         </scene>
-        <!--Edit Emoji View Controller-->
+        <!--New Emoji-->
         <scene sceneID="gT4-Cx-taE">
             <objects>
                 <viewController id="eL4-9K-OvW" customClass="EditEmojiViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s0M-mZ-NZM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UH3-xn-T12">
+                                <rect key="frame" x="135" y="103" width="224" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzG-xU-4IJ">
+                                <rect key="frame" x="21" y="106" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uvx-vf-dCR">
+                                <rect key="frame" x="135" y="149" width="224" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWb-bp-5OG">
+                                <rect key="frame" x="21" y="152" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J8v-nw-9HV">
+                                <rect key="frame" x="135" y="187" width="224" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fI-3g-I2k">
+                                <rect key="frame" x="21" y="190" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOm-H6-p2a">
+                                <rect key="frame" x="135" y="233" width="224" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbm-3O-0Rx">
+                                <rect key="frame" x="21" y="236" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jcm-cL-jwj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Emoji" id="akS-Vu-e4P">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bNJ-Ps-B0B">
+                            <connections>
+                                <action selector="cancel:" destination="eL4-9K-OvW" id="G6E-Yt-KZ5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dBz-Zn-mkB"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoryTextfield" destination="J8v-nw-9HV" id="VG0-Yr-Jpw"/>
+                        <outlet property="descriptionTextfield" destination="Uvx-vf-dCR" id="f1z-iO-ieE"/>
+                        <outlet property="emojiTextfield" destination="UH3-xn-T12" id="17o-ar-Cww"/>
+                        <outlet property="saveButton" destination="dBz-Zn-mkB" id="yer-Ce-bte"/>
+                        <outlet property="yearTextfield" destination="qOm-H6-p2a" id="Cze-Fj-O5n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGw-AU-bze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="959"/>
+            <point key="canvasLocation" x="1916" y="957.57121439280365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DQF-VP-hZY">
@@ -139,6 +212,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7f-xO-XbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-444" y="188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0AO-Oa-rAk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="udM-F1-FJ9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GQV-QU-eri">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eL4-9K-OvW" kind="relationship" relationship="rootViewController" id="1Ug-Jt-2y1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0i-a3-lAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105.5999999999999" y="958.92053973013503"/>
         </scene>
     </scenes>
 </document>
