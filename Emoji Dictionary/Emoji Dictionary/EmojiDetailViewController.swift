@@ -11,30 +11,29 @@ import UIKit
 class EmojiDetailViewController: UIViewController {
 
     @IBOutlet weak var emojiLabel: UILabel!
-    var emoji = ""                              // holds the emoji that has been selected
+    var emoji = Emoji()                              // holds the emoji that has been selected
     @IBOutlet weak var emojiDefinition: UILabel!
+    @IBOutlet weak var birthLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    //MARK: Navigation
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emojiLabel.text = emoji
-        setLabelsForDefaultEmojis(emote: emoji)
+        setLabelForSelectedEmoji()
     }
     
-    func setLabelsForDefaultEmojis(emote: String) {
-        //["😀","😊","🔥","👍🏿","🇺🇸"]
-        switch emote {
-        case "😀":
-            emojiDefinition.text = "Pretty happy guy"
-        case "😊":
-            emojiDefinition.text = "Aw, shucks kinda feeling"
-        case "🔥":
-            emojiDefinition.text = "Things are heatin' up!"
-        case "👍🏿":
-            emojiDefinition.text = "Good job, dude!"
-        case "🇺🇸":
-            emojiDefinition.text = "U.S.A."
-        default:
-            emojiDefinition.text = "Dunno what this is, you should define it!"
-        }
+    /*
+     Gets the Emoji data then sets the approritate
+     text data. This is called when the cell is selected
+     for a given emoji.
+     */
+    func setLabelForSelectedEmoji() {
+        emojiLabel.text = emoji.emoji
+        emojiDefinition.text = emoji.description
+        birthLabel.text = emoji.birthYear
+        categoryLabel.text = emoji.category
     }
 }

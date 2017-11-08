@@ -16,7 +16,10 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]     // emojis are technically text, need dbl quotes!
+    //var emojis = ["😀","😊","🔥","👍🏿","🇺🇸"]     // emojis are technically text, need dbl quotes!
+    
+    var emojis : [Emoji] = []                    // create a blank array of Emoji class
+    
     
     /*
      Runs this code when this ViewController is
@@ -24,6 +27,7 @@ class EmojiTableViewController: UITableViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojis = setupDefaultEmojis()     //load the emojis
     }
 
     // determines maximum number of rows for tableview
@@ -44,7 +48,7 @@ class EmojiTableViewController: UITableViewController {
         // Note: this will cause a Sigbrt error if no name is assigned
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = emojis[indexPath.row]    //the label for the cell will be the emoji
+        cell.textLabel?.text = emojis[indexPath.row].emoji    //the label for the cell will be the emoji
                                                         //it will appear in the very left of the cell
         return cell
     }
@@ -66,7 +70,47 @@ class EmojiTableViewController: UITableViewController {
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // get access to next ViewController
-        let emojiDetailViewController = segue.destination as! EmojiDetailViewController
-        emojiDetailViewController.emoji = sender as! String  // set the emoji
+        
+        // if the identifier is ourSegue continue to the detailView
+        if (segue.identifier == "ourSegue") {
+            let emojiDetailViewController = segue.destination as! EmojiDetailViewController
+            emojiDetailViewController.emoji = sender as! Emoji  // set the emoji
+        } else if (segue.identifier == "toEditViewController") {
+            //if identifier is editView show it but pass different items
+        }
+    }
+    
+    /*
+     This returns an array of Emoji objects. Refer to the Emoji class to know the contents
+     of the Emoji class.
+     This will setup the emojis for when the app is first loaded. 
+     */
+    func setupDefaultEmojis() -> [Emoji] {
+        let smiley = Emoji()//"😀","😊"
+        smiley.emoji = "😀"
+        smiley.description = "A normal smiley face"
+        smiley.category = "facial expression"
+        
+        let bashful = Emoji()
+        bashful.emoji = "😊"
+        bashful.description = "A basful felah"
+        bashful.category = "facial expression"
+        
+        let thumbsUp = Emoji(emoji: "👍🏿", description: "Thumbs up dude!", category: 2, dob: "4/14/1998")
+        return [smiley, bashful, thumbsUp!]
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func unwindToEmojiDetailView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as?
+            EditEmojiViewController, let newEmoji = sourceViewController.newEmoji {
+            
+            //add an emoji
+            let newIndexPath = IndexPath(row: emojis.count, section:0)
+            
+            emojis.append(newEmoji)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
 }
